@@ -1,0 +1,25 @@
+services:
+  database:
+    image: postgres:14
+    container_name: microservice_db
+    volumes:
+      - ./data/postgresql:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_DB=microservice_db
+    restart: always
+    ports:
+      - "5432:5432"
+
+  app:
+    build: .
+    container_name: microservice_app
+    volumes:
+      - ./app:/app
+    environment:
+      - ENV=development
+    ports:
+      - "4000:5000"
+    depends_on:
+      - database

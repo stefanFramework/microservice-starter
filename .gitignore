@@ -1,3 +1,18 @@
+# Local
+app/.idea/*
+.idea/*
+*.bak
+.DS_Store
+data/postgresql/*
+!data/.gitkeep
+app/logs/*
+!app/logs/.gitkeep
+
+.env
+!.env.example
+app/.env.*
+!app/.env.example
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
