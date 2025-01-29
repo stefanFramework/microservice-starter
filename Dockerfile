@@ -2,6 +2,8 @@ FROM python:3.12.0
 
 WORKDIR /app
 
+COPY .env .env
+
 COPY requirements.txt .
 
 RUN pip install --no-cache-dir --trusted-host pypi.python.org -r requirements.txt
