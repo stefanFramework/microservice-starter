@@ -1,10 +1,11 @@
 import logging
 
+from factory import create_app
+from config import current_config
 from logs import LogConfigurator
 
-from flask import Flask
 
-app = Flask(__name__)
+app = create_app(current_config)
 
 log_config = LogConfigurator()
 
@@ -15,7 +16,7 @@ logger.addHandler(log_config.create_console_handler())
 
 if __name__ == '__main__':
     app.run(
-        debug=True,  # current_config.DEBUG,
+        debug=current_config.DEBUG,
         host='0.0.0.0',
         port=5000
     )
