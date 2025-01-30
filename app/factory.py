@@ -2,8 +2,10 @@ from flask import Flask
 from flask_cors import CORS
 
 from flask_restful import Api
+from flask_jwt_extended import JWTManager
 
 from api.controllers.utils import UtilsController
+from api.controllers.login import LoginController
 
 
 def create_app(current_config):
@@ -24,8 +26,7 @@ def create_app(current_config):
         return response
 
     create_api(app)
-    # AuthorizationMiddleware(app)
-    # JWTManager(app)
+    JWTManager(app)
     # db.init_app(app)
 
     return app
@@ -34,9 +35,6 @@ def create_app(current_config):
 def create_api(app):
     api = Api(app)
     api.add_resource(UtilsController, '/health')
+    api.add_resource(LoginController, '/login')
 
-    # app.register_error_handler(AuthorizationTokenError, handle_authorization_token_error)
-    # app.register_error_handler(FieldValidationError, handle_validation_error)
-    # app.register_error_handler(UserSuspendedError, handle_invalid_user_error)
-    # app.register_error_handler(Exception, handle_server_error)
     return api

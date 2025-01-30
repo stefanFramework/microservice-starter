@@ -40,7 +40,7 @@ class BaseConfig:
     # The number of connections to keep open inside the connection pool
     SQLALCHEMY_DATABASE_POOL_SIZE = 5
 
-    JWT_SECRET_KEY = os.getenv('JWT_SECRET_KEY')
+    JWT_SECRET_KEY = os.getenv('JWT_SECRET_KEY', 'M1CR0S3RV1C3')
     JWT_ALGORITHM = "HS256"
     JWT_TOKEN_LOCATION = ['headers']
     JWT_HEADER_NAME = "Authorization"
