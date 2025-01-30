@@ -13,12 +13,15 @@ services:
       - "5432:5432"
 
   app:
-    build: .
+    build:
+      context: .
     container_name: microservice_app
     env_file:
       - .env
     volumes:
       - ./app:/app
+      - ./migrations:/app/migrations
+      - ./tests:/app/tests
     environment:
       - ENV=development
     ports:
