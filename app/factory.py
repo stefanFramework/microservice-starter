@@ -7,6 +7,7 @@ from extensions import db
 
 from api.controllers.utils import UtilsController
 from api.controllers.login import LoginController
+from api.controllers.books import BooksController
 
 
 def create_app(current_config):
@@ -37,5 +38,6 @@ def create_api(app):
     api = Api(app)
     api.add_resource(UtilsController, '/health')
     api.add_resource(LoginController, '/login')
+    api.add_resource(BooksController, '/books', '/books/<int:book_id>')
 
     return api
