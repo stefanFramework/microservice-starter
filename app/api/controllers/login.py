@@ -4,6 +4,8 @@ from flask_restful import Resource
 
 from flask_jwt_extended import create_access_token
 
+from models import User
+
 
 class LoginController(Resource):
     def post(self):
@@ -12,9 +14,10 @@ class LoginController(Resource):
         email = input_data.get('email')
         password = input_data.get('password')
 
-        registered_user = None
+        registered_user = User.query.filter_by(email=email).one_or_none()
 
-        if not registered_user:
+        if (not registered_user or
+                not registered_user.check_password(password)):
             return jsonify("Invalid Credentials"), 401
 
         auth_token = create_access_token(identity=str(registered_user.id))
