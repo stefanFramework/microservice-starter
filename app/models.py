@@ -1,3 +1,4 @@
+import bcrypt
 from extensions import db
 
 
@@ -11,8 +12,9 @@ class User(db.Model):
     avatar = db.Column(db.String, nullable=True)
 
     def check_password(self, password):
-        return password == '1234'
-
+        user_bytes = password.encode('utf-8')
+        return bcrypt.checkpw(user_bytes, self.password)
+        
 
     def __repr__(self):
         return f'<User {self.username}>'
