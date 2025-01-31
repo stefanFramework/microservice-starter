@@ -8,7 +8,7 @@ from flask_restful import abort
 logger = logging.getLogger(__name__)
 
 
-def jwt_required(fn):
+def auth_required(fn):
     @wraps(fn)
     def wrapper(*args, **kwargs):
         try:
