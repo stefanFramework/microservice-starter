@@ -46,6 +46,7 @@ class BaseConfig:
     JWT_HEADER_NAME = "Authorization"
     JWT_HEADER_TYPE = "Bearer"
     JWT_ACCESS_TOKEN_EXPIRES = timedelta(hours=6)  # Expires in 6 hours
+    JWT_REFRESH_TOKEN_EXPIRES = timedelta(days=3)  # Expires in 3 days
 
     GOOGLE_CLIENT_ID = os.getenv('GOOGLE_CLIENT_ID')
     GOOGLE_SECRET_KEY = os.getenv('GOOGLE_SECRET_KEY')
