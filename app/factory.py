@@ -3,11 +3,11 @@ from flask_cors import CORS
 
 from flask_restful import Api
 from flask_jwt_extended import JWTManager
-from extensions import db
 
-from api.controllers.utils import UtilsController
-from api.controllers.login import LoginController
-from api.controllers.books import BooksController
+from app.extensions import db
+from app.api.controllers.utils import UtilsController
+from app.api.controllers.login import LoginController
+from app.api.controllers.books import BooksController
 
 
 def create_app(current_config):

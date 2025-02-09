@@ -2,7 +2,7 @@ import datetime
 from flask import jsonify
 from flask_restful import Resource
 
-from config import current_config
+from app.config import current_config
 
 
 class UtilsController(Resource):

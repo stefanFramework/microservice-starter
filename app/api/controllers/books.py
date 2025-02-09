@@ -1,10 +1,9 @@
-
 from flask import jsonify, request, make_response
 from flask_restful import Resource
 
-from api.middleware.auth import auth_required
-from models import Book
-from extensions import db
+from app.api.middleware.auth import auth_required
+from app.models import Book
+from app.extensions import db
 
 
 class BooksController(Resource):

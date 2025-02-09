@@ -1,13 +1,10 @@
 import logging
 
-from factory import create_app
-from config import current_config
-from logs import LogConfigurator
+from app.factory import create_app
+from app.config import current_config, log_config
 
 
 app = create_app(current_config)
-
-log_config = LogConfigurator()
 
 logger = logging.getLogger()
 logger.setLevel(log_config.get_current_log_level())

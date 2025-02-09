@@ -1,17 +1,15 @@
 # Local
-app/.idea/*
 .idea/*
 *.bak
 .DS_Store
 data/postgresql/*
 !data/.gitkeep
-app/logs/*
-!app/logs/.gitkeep
-
+logs/*
+!logs/.gitkeep
 .env
 !.env.example
-app/.env.*
-!app/.env.example
+app/.idea/*
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

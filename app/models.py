@@ -1,7 +1,7 @@
 import bcrypt
 
 from datetime import datetime
-from extensions import db
+from app.extensions import db
 
 from sqlalchemy.types import DateTime
 

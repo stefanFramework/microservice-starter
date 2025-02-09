@@ -14,16 +14,13 @@ services:
 
   app:
     build:
-      context: .
+      context: ./
+      dockerfile: Dockerfile
     container_name: microservice_app
     env_file:
       - .env
     volumes:
-      - ./app:/app
-      - ./migrations:/migrations
-      - ./tests:/tests
-    environment:
-      - ENV=development
+      - .:/app
     ports:
       - "4000:5000"
     depends_on:
