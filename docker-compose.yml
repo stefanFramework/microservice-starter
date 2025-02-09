@@ -3,7 +3,7 @@ services:
     image: postgres:14
     container_name: microservice_db
     volumes:
-      - ./data/postgresql:/var/lib/postgresql/data
+      - ./storage/data/postgresql:/var/lib/postgresql/data
     environment:
       - POSTGRES_USER=admin
       - POSTGRES_PASSWORD=admin

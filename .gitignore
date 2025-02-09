@@ -2,10 +2,9 @@
 .idea/*
 *.bak
 .DS_Store
-data/postgresql/*
-!data/.gitkeep
-logs/*
-!logs/.gitkeep
+storage/*
+!storage/data/.gitkeep
+!storage/logs/.gitkeep
 .env
 !.env.example
 app/.idea/*

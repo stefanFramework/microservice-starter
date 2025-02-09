@@ -95,7 +95,7 @@ class LogConfigurator:
     def __init__(self):
         self.LOG_LEVEL = os.getenv('LOG_LEVEL', 'INFO')
 
-        self.LOG_FILENAME = join('logs', os.getenv('LOG_FILENAME', 'mss.log'))
+        self.LOG_FILENAME = join('storage/logs', os.getenv('LOG_FILENAME', 'mss.log'))
         self.LOG_BACKUP_COUNT = int(os.getenv('LOG_BACKUP_COUNT', 7))
         self.LOG_ROTATION_INTERVAL = int(os.getenv('LOG_ROTATION_INTERVAL', 1))
         self.LOG_ROTATION_INTERVAL_UNIT = os.getenv('LOG_ROTATION_INTERVAL_UNIT', 'D')
