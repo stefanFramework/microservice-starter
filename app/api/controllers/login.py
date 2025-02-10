@@ -17,7 +17,7 @@ class LoginController(Resource):
 
         if (not registered_user or
                 not registered_user.check_password(password)):
-            return jsonify("Invalid Credentials"), 401
+            return make_response({}, 401)
 
         auth_token = create_access_token(identity=str(registered_user.id))
 
